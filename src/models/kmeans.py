@@ -8,7 +8,7 @@ class Kmeans:
     def __init__(self,
                  nro_clusters:int = 2,
                  metodo_inicializacao:str = "random",
-                 nro_tentativas_centroides:str = "auto",
+                 nro_tentativas_centroides:str|int = "auto",
                  nro_max_iteracao:int = 300,
                  tolerancia:float = 0.0001,
                  verbose:int = 0,

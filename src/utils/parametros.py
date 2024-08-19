@@ -72,7 +72,7 @@ class ParametrosKmeans:
     def getNro_clusters(self) -> int:
         return self._nro_clusters
     
-    def getNro_tentivas_centroide(self) -> int:
+    def getNro_tentivas_centroide(self) -> int|str:
         return self._nro_tentativas_centroide_
         
     def getTolerancia(self) -> float:
@@ -102,7 +102,7 @@ class ParametrosKmeans:
     def setNro_clusters(self, nro_clusters:int) -> None:
         self._nro_clusters = nro_clusters
         
-    def setNro_tentivas_centroide(self, nro_tentativas_centroide:int) -> None:
+    def setNro_tentivas_centroide(self, nro_tentativas_centroide:int|str) -> None:
         self._nro_tentativas_centroide_ = nro_tentativas_centroide
         
     def setTolerancia(self, tolerancia:float) -> None:
