@@ -1,8 +1,8 @@
 frequencia_minima = 1
-nro_max_iteracoes = 300
+nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
 semente_randomica = 42
 nro_threads =
-quantil = 0.3
+quantil = 0.2
 qtd_amostras =
