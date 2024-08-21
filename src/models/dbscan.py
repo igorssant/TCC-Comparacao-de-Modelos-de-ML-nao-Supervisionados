@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from sklearn.cluster import DBSCAN
 
-class Bdscan:
+class Dbscan:
     
     
     def __init__(self,
@@ -35,7 +35,7 @@ class Bdscan:
     
     def getCore_indices(self) -> np.array:
         # RETORNA UM VETOR DE TAMANHO N
-        return self._bdscan.core_sample_indices_
+        return self._dbscan.core_sample_indices_
     
     def getComponentes(self) -> np.array:
         # RETORNA UMA MATRIZ MxN
@@ -73,3 +73,7 @@ class Bdscan:
     
     def setParams(self, **params) -> DBSCAN:
         return self._dbscan.set_params(params = params)
+    
+    def predict(self, X:pd.DataFrame) -> np.array:
+        # RETORNA UM VETOR DE TAMANHO N
+        return self._dbscan.labels_.astype(int)
