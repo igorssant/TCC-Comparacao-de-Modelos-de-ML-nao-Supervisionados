@@ -1,9 +1,32 @@
+[FUNCAO_RENAL]
 semente_randomica = 42
 nro_iteracoes_inicial = 1
 nro_maximo_iteracoes = 500
 metodo_inicializacao = k-means++
 nro_clusters = 13
 nro_tentivas_centroide = 4
+tolerancia = 0.0004
+algoritmo = elkan
+fazer_copia = True
+
+[DIETA_GRUPOS]
+semente_randomica = 42
+nro_iteracoes_inicial = 1
+nro_maximo_iteracoes = 200
+metodo_inicializacao = random
+nro_clusters = 13
+nro_tentivas_centroide = 3
+tolerancia = 0.0004
+algoritmo = lloyd
+fazer_copia = True
+
+[PERFIL_HEPATICO]
+semente_randomica = 42
+nro_iteracoes_inicial = 1
+nro_maximo_iteracoes = 200
+metodo_inicializacao = k-means++
+nro_clusters = 13
+nro_tentivas_centroide = 3
 tolerancia = 0.0004
 algoritmo = elkan
 fazer_copia = True

@@ -22,7 +22,8 @@ class ParametrosKmeans:
                  nro_tentivas_centroide:str|int = "auto",
                  tolerancia:int = 0.0001,
                  algoritmo_kmeans:str = "lloyd",
-                 fazer_copia:bool = True) -> None:
+                 fazer_copia:bool = True,
+                 nome_dataset:str|None = None) -> None:
         if path_arquivo_hiperparametros is None:
             self._semente_randomica = semente_randomica
             self._nro_iteracoes_inicial = nro_iteracoes_inicial
@@ -36,6 +37,13 @@ class ParametrosKmeans:
             
         else:
             with open(file = path_arquivo_hiperparametros, mode = "r") as arquivo:
+                if nome_dataset is not None:
+                    nome_dataset = "[" + nome_dataset.upper() + "]"
+                    conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                    
+                    while conteudo_linha != nome_dataset:
+                        conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                    
                 self._semente_randomica = int(pegarsubstring.substring(arquivo.readline()))
                 self._nro_iteracoes_inicial = int(pegarsubstring.substring(arquivo.readline()))
                 self._nro_maximo_iteracoes = int(pegarsubstring.substring(arquivo.readline()))
