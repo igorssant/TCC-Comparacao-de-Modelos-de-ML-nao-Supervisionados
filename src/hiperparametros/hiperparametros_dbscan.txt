@@ -1,3 +1,4 @@
+[FUNCAO_RENAL]
 epocas = 0.5
 peso_minimo = 5
 metrica = euclidean

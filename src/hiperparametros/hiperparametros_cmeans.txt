@@ -1,3 +1,4 @@
+[FUNCAO_RENAL]
 nro_clusters = 2
 parametro_fuzzy = 2.0
 nro_maximo_iteracoes = 300

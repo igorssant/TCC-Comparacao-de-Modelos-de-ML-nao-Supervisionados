@@ -140,7 +140,8 @@ class ParametrosMeanshift:
                  nro_threads:int|None = None,
                  quantil:float = 0.3,
                  qtd_amostras:int|None = None,
-                 path_arquivo_hiperparametros:str|None = None) -> None:
+                 path_arquivo_hiperparametros:str|None = None,
+                 nome_dataset:str|None = None) -> None:
         if path_arquivo_hiperparametros is None:
                 self._frequencia_minima_ = frequencia_minima
                 self._nro_max_iteracoes_ = nro_max_iteracoes
@@ -153,6 +154,13 @@ class ParametrosMeanshift:
             
         else:
             with open(file = path_arquivo_hiperparametros, mode = "r") as arquivo:
+                if nome_dataset is not None:
+                    nome_dataset = "[" + nome_dataset.upper() + "]"
+                    conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                    
+                    while conteudo_linha != nome_dataset:
+                        conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                
                 self._frequencia_minima_ = int(pegarsubstring.substring(arquivo.readline()))
                 self._nro_max_iteracoes_ = int(pegarsubstring.substring(arquivo.readline()))
                 self._clusterizar_todos_pontos_ = bool(pegarsubstring.substring(arquivo.readline()))
@@ -251,7 +259,8 @@ class ParametrosCmeans:
                  tolerancia:float = 0.0001,
                  modelo_treinado = False,
                  nro_threads:int|None = None,
-                 path_arquivo_hiperparametros:str|None = None) -> None:
+                 path_arquivo_hiperparametros:str|None = None,
+                 nome_dataset:str|None = None) -> None:
         if path_arquivo_hiperparametros is None:
             self._nro_clusters_ = nro_clusters
             self._parametro_fuzzy_ = parametro_fuzzy
@@ -264,6 +273,13 @@ class ParametrosCmeans:
             
         else:
             with open(file = path_arquivo_hiperparametros, mode = "r") as arquivo:
+                if nome_dataset is not None:
+                    nome_dataset = "[" + nome_dataset.upper() + "]"
+                    conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                    
+                    while conteudo_linha != nome_dataset:
+                        conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                
                 self._nro_clusters_ = int(pegarsubstring.substring(arquivo.readline()))
                 self._parametro_fuzzy_ = float(pegarsubstring.substring(arquivo.readline()))
                 self._nro_maximo_iteracoes_ = int(pegarsubstring.substring(arquivo.readline()))
@@ -352,7 +368,8 @@ class ParametrosDBSCAN:
                  metrica_minkowski:float|None = None,
                  nro_threads:int|None = None,
                  semente_randomica:int = 42,
-                 path_arquivo_hiperparametros:str|None = None) -> None:
+                 path_arquivo_hiperparametros:str|None = None,
+                 nome_dataset:str|None = None) -> None:
         if path_arquivo_hiperparametros is not None:
             self._epocas_ = epocas
             self._peso_minimo_ = peso_minimo
@@ -365,6 +382,13 @@ class ParametrosDBSCAN:
             
         else:
             with open(file = path_arquivo_hiperparametros, mode = "r") as arquivo:
+                if nome_dataset is not None:
+                    nome_dataset = "[" + nome_dataset.upper() + "]"
+                    conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                    
+                    while conteudo_linha != nome_dataset:
+                        conteudo_linha = arquivo.readline().upper().replace("\n", "")
+                
                 self._epocas_ = int(pegarsubstring.substring(arquivo.readline()))
                 self._peso_minimo_ = int(pegarsubstring.substring(arquivo.readline()))
                 self._metrica_ = pegarsubstring.substring(arquivo.readline())

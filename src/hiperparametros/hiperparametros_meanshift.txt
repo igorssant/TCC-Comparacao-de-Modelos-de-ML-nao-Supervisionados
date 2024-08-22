@@ -1,3 +1,4 @@
+[FUNCAO_RENAL]
 frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
@@ -6,3 +7,7 @@ semente_randomica = 42
 nro_threads =
 quantil = 0.2
 qtd_amostras =
+
+[DIETA_GRUPOS]
+
+[PERFIL_HEPATICO]
