@@ -1,9 +1,29 @@
 [FUNCAO_RENAL]
 epocas = 0.5
+peso_minimo = 8
+metrica = euclidean
+algoritmo = kd_tree
+tamanho_folha = 80
+metrica_minkowski = None
+nro_threads = -1
+semente_randomica = 42
+
+[DIETA_GRUPOS]
+epocas = 1.4
+peso_minimo = 4
+metrica = minkowski
+algoritmo = brute
+tamanho_folha = 30
+metrica_minkowski = 4
+nro_threads = -1
+semente_randomica = 42
+
+[PERFIL_HEPATICO]
+epocas = 0.5
 peso_minimo = 5
 metrica = euclidean
 algoritmo = auto
 tamanho_folha = 30
 metrica_minkowski = None
-nro_threads = 
+nro_threads = -1
 semente_randomica = 42
