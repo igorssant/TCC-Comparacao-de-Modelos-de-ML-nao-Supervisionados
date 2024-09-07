@@ -12,5 +12,7 @@ dependencies:
   - scikit-learn
   - pip
   - seaborn
+  - sktime-all-extras
   - pip:
     - fuzzy-c-means
+    - kmodes
