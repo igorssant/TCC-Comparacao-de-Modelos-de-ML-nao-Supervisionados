@@ -14,5 +14,6 @@ dependencies:
   - seaborn
   - tslearn
   - pip:
+    - tqdm
     - fuzzy-c-means
     - kmodes
