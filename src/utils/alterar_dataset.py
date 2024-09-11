@@ -34,3 +34,14 @@ def pivotear_dataset_creatinina(df_creatinina:pd.DataFrame, coluna_indice:str, c
     df_pivoteado.columns = ["creatinina_dia_" + str(coluna) for coluna in df_pivoteado.columns]
 
     return df_pivoteado
+
+def despivotear_dataset(df:pd.DataFrame,
+                        coluna_id:str|list[str],
+                        colunas_colapsar:list[str]|str,
+                        nome_coluna_colapsada:str,
+                        nome_coluna_de_valores:str) -> pd.DataFrame:
+    df_despivoteado = df.melt(id_vars = coluna_id,
+                              value_vars = colunas_colapsar,
+                              value_name = nome_coluna_colapsada,
+                              var_name = nome_coluna_de_valores)
+    return df_despivoteado
