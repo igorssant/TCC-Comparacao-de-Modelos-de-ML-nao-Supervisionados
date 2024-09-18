@@ -35,7 +35,7 @@ clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
 semente_randomica = 42
 nro_threads = -1
-quantil = 0.5
+quantil = 0.2
 qtd_amostras =
 
 [CREATININA]
@@ -45,5 +45,5 @@ clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
 semente_randomica = 42
 nro_threads = -1
-quantil = 0.5
+quantil = 0.2
 qtd_amostras =
