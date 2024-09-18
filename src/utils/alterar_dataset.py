@@ -1,8 +1,11 @@
 import numpy as np
 import pandas as pd
 
-def preencher_dias_faltantes(df:pd.DataFrame, multi_indice:list|str, corpo_dataset:str, limite_dias:int) -> pd.DataFrame:
-    dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice[0])
+def preencher_dias_faltantes(df:pd.DataFrame, multi_indice:list[str]|str, corpo_dataset:str, limite_dias:int) -> pd.DataFrame:
+    if type(multi_indice) == list[str]:
+        dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice[0])
+    else:
+        dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice)
     
     novo_dataframe:pd.DataFrame = pd.DataFrame(
         index = pd.MultiIndex.from_product(
@@ -45,3 +48,28 @@ def despivotear_dataset(df:pd.DataFrame,
 def multi_indexar_dataset(df:pd.DataFrame, indices:str|list[str]) -> pd.DataFrame:
     df_multi_indexado:pd.DataFrame = df.set_index(keys = ["subject_id", "day"])
     return df_multi_indexado.sort_index()
+
+def __verificar_valor_em_linha(serie:pd.Series, valor:int|float) -> pd.Series:
+    for indice, _ in serie.items():
+        if serie[indice] == valor:
+            serie[indice] = np.nan
+    
+    return serie
+
+def deletar_valores_absurdos(df:pd.DataFrame, valor:int|float) -> pd.DataFrame:
+    for coluna in df.columns:
+        df[coluna] = __verificar_valor_em_linha(df[coluna], valor)
+        
+    return df
+
+def preencher_valores_faltantes_linha(df:pd.DataFrame) -> pd.DataFrame:
+    df_transposto = df.T
+    
+    for coluna in df_transposto.columns:
+        df_transposto[coluna] = df_transposto[coluna].fillna(
+            df_transposto[coluna].shift(
+                fill_value = df_transposto[coluna].iloc[0]
+            )
+        )
+
+    return df_transposto.T

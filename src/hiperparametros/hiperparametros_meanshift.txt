@@ -1,5 +1,5 @@
 [FUNCAO_RENAL]
-frequencia_minima = 2
+frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
@@ -9,7 +9,7 @@ quantil = 0.2
 qtd_amostras =
 
 [DIETA_GRUPOS]
-frequencia_minima = 3
+frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
@@ -19,7 +19,7 @@ quantil = 0.6
 qtd_amostras =
 
 [PERFIL_HEPATICO]
-frequencia_minima = 3
+frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
@@ -29,17 +29,17 @@ quantil = 0.6
 qtd_amostras =
 
 [UREIA]
-frequencia_minima = 2
+frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
 semente_randomica = 42
 nro_threads = -1
-quantil = 0.2
+quantil = 0.6
 qtd_amostras =
 
 [CREATININA]
-frequencia_minima = 3
+frequencia_minima = 1
 nro_max_iteracoes = 500
 clusterizar_todos_pontos = True
 usar_versao_discreta_pontos = False
