@@ -17,3 +17,4 @@ dependencies:
     - tqdm
     - fuzzy-c-means
     - kmodes
+    - pymannkendall
