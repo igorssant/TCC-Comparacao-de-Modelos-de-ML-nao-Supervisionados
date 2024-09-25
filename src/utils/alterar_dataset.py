@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 def preencher_dias_faltantes(df:pd.DataFrame, multi_indice:list[str]|str, corpo_dataset:str, limite_dias:int) -> pd.DataFrame:
-    if type(multi_indice) == list[str]:
+    if isinstance(multi_indice, list):
         dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice[0])
     else:
         dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice)
@@ -73,3 +73,12 @@ def preencher_valores_faltantes_linha(df:pd.DataFrame) -> pd.DataFrame:
         )
 
     return df_transposto.T
+
+def concatenar_dois_datasets_por_paciente(df_esquerda:pd.DataFrame, df_direita:pd.DataFrame) -> pd.DataFrame:
+    cols_to_use = df_direita.columns.difference(df_esquerda.columns)
+    
+    return pd.merge(df_esquerda,
+                    df_direita[cols_to_use],
+                    left_index = True,
+                    right_index = True,
+                    how = "outer")
