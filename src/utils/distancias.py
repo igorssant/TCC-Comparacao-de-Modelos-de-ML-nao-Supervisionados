@@ -4,8 +4,8 @@
 import sys
 sys.path.append("./utils/")
 from scipy.spatial.distance import pdist, squareform
-import pegarsubstring
 import pandas as pd
+
 
 def distancia_gower(x:pd.Series, y:pd.Series) -> list[float]:
     tamanho = len(x)

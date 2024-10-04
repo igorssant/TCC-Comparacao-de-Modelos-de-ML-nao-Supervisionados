@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 
+
 def preencher_dias_faltantes(df:pd.DataFrame, multi_indice:list[str]|str, corpo_dataset:str, limite_dias:int) -> pd.DataFrame:
     if isinstance(multi_indice, list):
         dataframe_agrupado:pd.DataFrame = df.groupby(multi_indice[0])

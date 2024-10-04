@@ -6,6 +6,7 @@ sys.path.append("./utils/")
 import pegarsubstring
 import numpy as np
 
+
 class ParametrosKmeans:
     
     

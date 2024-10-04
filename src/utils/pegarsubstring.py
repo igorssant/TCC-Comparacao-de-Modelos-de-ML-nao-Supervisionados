@@ -2,6 +2,7 @@ import sys
 sys.path.append("./utils/")
 import pandas as pd
 
+
 def substring(frase:str, separacao:str= "= ") -> str:
      try:
           frase = frase.split(separacao, 1)[1]
