@@ -99,10 +99,24 @@ Neste caso, o número de pacientes excluídos é o somatório de todas as três 
                             |             ou é contínua;
                             |   - s < 0 : tende a decrescrescer.
 ----------------------------------------------------------------------
-            var_s           |   A variância S.
-                            |   s
+            var_s           |   A variância de S.
+                            |   Esta variável quantifica a incerteza
+                            |   associada à variável 's' e, por
+                            |   consequência, a variável 'trend'.
+                            |   Quanto mais baixa, melhor.
+                            |   valores altos de 'var_s' indicam
+                            |   alta incerteza, enquanto valores
+                            |   baixos de 'var_s' sugerem uma
+                            |   estimação de tendência com
+                            |   altos níveis de confiança.
 ----------------------------------------------------------------------
             slope           |   A inclinação da curva.
+                            |   - slope > 0 : a curva faz parte de
+                            |   uma função crescente;
+                            |   - slope = 0 : a curva faz parte de
+                            |   uma função contínua;
+                            |   - slope < 0 : a curva faz parte de
+                            |   uma função decrescente.
 ----------------------------------------------------------------------
             intercept       |   O ponto no qual a curva toca o
                             |   eixo y.
