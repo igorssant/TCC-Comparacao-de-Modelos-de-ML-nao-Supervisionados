@@ -52,3 +52,59 @@ Neste caso, o número de pacientes excluídos é o somatório de todas as três 
 18441942, 18702320, 18858799, 19036718, 19057052, 19305085, 19392949,
 19582136, 19607985, 19666098, 19674376, 19831176, 19884808, 19894790,
 19957285
+
+## Explicação dos resultados gerados pelo testes de Mann-Kendall
+```txt
+----------------------------------------------------------------------
+    VARIÁVEIS RETORNADAS    |   EXPLICAÇÃO
+----------------------------------------------------------------------
+            trend           |   A tendência da curva.
+                            |   - Increasing : tende a crescer;
+                            |   - Decreasing : tende a descrescer;
+                            |   - No Trend   : não possui tendência
+                            |                  ou é contínua.
+----------------------------------------------------------------------
+            h               |   Flag de controle:
+                            |   - True se há tendencia;
+                            |   - False se não há tendência.
+----------------------------------------------------------------------
+            p               |   valor p (p-value) do teste de
+                            |   significância.
+                            |   Quanto menor, melhor. O ideal é
+                            |   permanecer abaixo do valor 0,05.
+----------------------------------------------------------------------
+            z               |   Estatística de teste padrão Z.
+                            |   Valores positivos de Z indicam
+                            |   tendências crescentes. Valores
+                            |   negativos de Z denotam tendências
+                            |   decrescentes. Geralmente é utilizado
+                            |   o nível de significância de 5%.
+----------------------------------------------------------------------
+            Tau             |   O 'Tau' de Kendall.
+                            |   É uma estatística usada para medir a
+                            |   correlação de postos entre duas
+                            |   quantidades medidas.
+                            |   - 1 : Indica forte forte tendência
+                            |   crescente;
+                            |   - 0 : Indica que não há tendência;
+                            |   - (-1) : Indica forte tendência
+                            |   decrescente.
+----------------------------------------------------------------------
+            s               |   A pontuação de Mann-Kendall.
+                            |   Esta variável serve de base para
+                            |   determinar a tendência da reta e,
+                            |   por consequência, 'trend'.
+                            |   - s > 0 : tende a crescer;
+                            |   - s = 0 : não possui tendência
+                            |             ou é contínua;
+                            |   - s < 0 : tende a decrescrescer.
+----------------------------------------------------------------------
+            var_s           |   A variância S.
+                            |   s
+----------------------------------------------------------------------
+            slope           |   A inclinação da curva.
+----------------------------------------------------------------------
+            intercept       |   O ponto no qual a curva toca o
+                            |   eixo y.
+----------------------------------------------------------------------
+```
