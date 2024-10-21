@@ -12,9 +12,8 @@ dependencies:
   - scikit-learn
   - pip
   - seaborn
-  - tslearn
+  - shap
   - pip:
     - tqdm
     - fuzzy-c-means
-    - kmodes
     - pymannkendall
